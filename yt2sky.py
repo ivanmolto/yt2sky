@@ -4,6 +4,8 @@ from pytube import YouTube
 import webbrowser
 import os
 
+client = siaskynet.SkynetClient()
+
 blurb_prompt = 'Please enter the YouTube video link: '
 blurb_saved_locally = 'Your high resolution mp4 YouTube video has been saved locally as:  '
 blurb_current_directory = 'You will find it at the current directory: '
@@ -36,7 +38,7 @@ path_to_video = os.getcwd()
 print(blurb_current_directory + str(path_to_video))
 print()
 
-skylink = siaskynet.upload_file(video_download_name)
+skylink = client.upload_file(video_download_name)
 print(blurb_description)
 print(skylink)
 print()
